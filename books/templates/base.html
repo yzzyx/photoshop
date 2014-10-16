@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>{{ page_title }}</title>
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/custom.css" %}" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+
+
+<div class="container content">
+<div class="page-header">
+  <h1><a href="/">Böcker FTW!</a> <small>välj en bok, och säg att du vill ha den!</small><br/>
+<small style="font-size: x-small;">Du får hämta den själv, och gärna ge mig dricks!</small></h1>
+</div>
+    {% block content %}{% endblock %}
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static "js/bootstrap.js" %}"></script>
+</body>
+</html>

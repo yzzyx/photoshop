@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid">
+<div class="row show-grid">
+{% for book in books %}
+    <div class="col-md-4 text-center">
+    <a href="{% url "books:book" book.id %}"><img src="{{ book.thumbnail.url }}"></a>
+    </div>
+
+    {% if forloop.counter|divisibleby:3 %}
+        </div>
+<br/>
+        <div class="row">
+    {% endif %}
+{% endfor %}
+</div>
+</div>
+{% endblock %}
