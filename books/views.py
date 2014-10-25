@@ -12,14 +12,16 @@ def book(request,id):
     book = get_object_or_404(Book, pk=id)
     errormessage = None
 
-    if request.method == 'POST':
+    if not book.available:
+        errormessage = "Denna bok är redan tagen!"
+    elif request.method == 'POST':
         if len(request.POST['name']) == 0:
             errormessage = "Du måste fylla i ett namn!"
         else:
             person = Person()
             person.name = request.POST['name']
             person.book_claimed = Book.objects.get(pk=id)
-#            book.claimed_by = request.POST['name']
+
             person.save()
             return HttpResponseRedirect(reverse("books:book", args=[id]))
 

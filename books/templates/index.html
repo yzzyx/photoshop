@@ -5,6 +5,10 @@
 <div class="row show-grid">
 {% for book in books %}
     <div class="col-md-4 text-center">
+        {% if not book.available %}
+        <div style="position: absolute; height: 5px; top: 50%; width: 100%; background-color: #922;">
+        </div>
+        {% endif %}
     <a href="{% url "books:book" book.id %}"><img src="{{ book.thumbnail.url }}"></a>
     </div>
 

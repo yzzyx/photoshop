@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Book(models.Model):
+    available = models.BooleanField(default=True)
     image = models.FileField(upload_to='books')
     thumbnail = models.FileField(upload_to='books/thumbnail')
 
