@@ -16,7 +16,7 @@
 {% endif %}
 
 {% if errormessage %}<div class="alert alert-danger" role="alert"><strong>Fel!</strong> {{ errormessage }}</div>{% endif %}
-{% if book.avaiable %}
+{% if book.available %}
         <form method="post" action="{% url "books:book" book.id  %}">
         {% csrf_token %}
         <input class="form-control" type="text" name="name" placeholder="Ange namn">
